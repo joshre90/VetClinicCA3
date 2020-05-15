@@ -1,3 +1,4 @@
+package staff;
 import animal.PetAnimals;
 
 public class Queue {

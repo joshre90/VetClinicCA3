@@ -44,7 +44,8 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			String task = atg.getRandomData();
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, 0, "Manager", task);
+			task = atg.getRandomData();
+			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Manager", task);
 			administrativeStaff.add(manager);
 		}
 
@@ -55,7 +56,7 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, 0, "Assistant");
+			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Assistant");
 			administrativeStaff.add(assistant);
 		}
 
@@ -66,7 +67,7 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, 0, "Receptionist");
+			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Receptionist");
 			administrativeStaff.add(receptionist);
 		}
 
@@ -77,7 +78,7 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, 0, "Customer Service Rep");
+			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Customer Service Rep");
 			administrativeStaff.add(customServ);
 		}
 
@@ -88,15 +89,9 @@ public class AdminStaffList {
 			String[] adminParts = adminData.split(" ");
 			// Create a class for salary
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, 0, "IT Techie");
+			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "IT Techie");
 			administrativeStaff.add(itGuy);
 		}
-		
-		for (ClinicStaff ms : administrativeStaff) {
-			// System.out.println(ms.getFirstName() + ms.getSurname() + ms.getTitle());
-			System.out.println(ms);
-		}
-
 
 		return administrativeStaff;
 	}

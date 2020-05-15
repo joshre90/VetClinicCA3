@@ -8,11 +8,8 @@ public class ListStaff {
 		System.out.println("");
 
 		for (ClinicStaff ms : staff) {
-			// System.out.println(ms.getFirstName() + ms.getSurname() + ms.getTitle());
-			System.out.println(ms);
+			System.out.println("------\n" + "\nName: " + ms.getFirstName() + "\nSurname: " + ms.getSurname() + "\nRole: "+ ms.getTitle() + "\nEmployeed ID: " + ms.getStaffID() + "\nAnnual Salary: " + ms.getSalary() +"\n");
 		}
-
-		// return null;
 
 	}
 
@@ -54,7 +51,7 @@ public class ListStaff {
 
 		for (ClinicStaff ms : staff) {
 			if(role.equals(ms.getTitle())) {
-				System.out.println(ms);
+				System.out.println("------\n" + "\nName: " + ms.getFirstName() + "\nSurname: " + ms.getSurname() + "\nRole: "+ ms.getTitle() + "\nEmployeed ID: " + ms.getStaffID() + "\nAnnual Salary: " + ms.getSalary() +"\n");
 			}
 		}
 	}

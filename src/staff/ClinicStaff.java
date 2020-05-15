@@ -16,7 +16,7 @@ public abstract class ClinicStaff {
 		this.firstName = firstName;
 		this.surname = surname;
 		this.staffID = staffID;
-		this.salary = 1;
+		this.salary = salary;
 		this.title = title;
 		
 	}

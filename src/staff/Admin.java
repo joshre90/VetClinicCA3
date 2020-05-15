@@ -4,6 +4,16 @@ public class Admin extends ClinicStaff{
 
 	public String task;
 	
+	public String getTask() {
+		return task;
+	}
+
+
+	public void setTask(String task) {
+		this.task = task;
+	}
+
+
 	public Admin(String firstName, String surname, int staffID, int salary, String title,String task) {
 		super(firstName, surname, staffID, salary, title);
 		this.task = task;

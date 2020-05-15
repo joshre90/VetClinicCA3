@@ -10,15 +10,15 @@ public class Main {
 //		AnimalList al = new AnimalList();
 //		al.generateAnimals();
 		
-//		MedicalStaffList msl = new MedicalStaffList();
-//		msl.generateMedicalStaff();
+		MedicalStaffList msl = new MedicalStaffList();
+		msl.generateMedicalStaff();
 //		
 		AdminStaffList asl = new AdminStaffList();
 		asl.generateAdminStaff();
 		
 		Helper help = new Helper();
 		//help.Helper();
-		//help.execute();
+		help.execute();
     
 }
 }

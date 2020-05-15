@@ -11,6 +11,9 @@ public class MedicalStaffList {
 	protected int salary;
 	private String title;
 	private int j = 0;// Counter used for the staffID
+	
+	private Queue animalQueue;
+	
 
 	// Number of medical staff to be generated, it is calculated on a percentage
 	// level in case the total of medical staff varies
@@ -47,7 +50,7 @@ public class MedicalStaffList {
 			String[] medicalParts = medicalData.split(" ");
 			// Create a class for salary
 			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
-			vet = medicStaff.new Veterinarian(medicalParts[0], medicalParts[1], staffID, 0 , "Veterinarian");
+			vet = medicStaff.new Veterinarian(medicalParts[0], medicalParts[1], staffID, Integer.parseInt(medicalParts[2]) , "Veterinarian");
 			medicalStaff.add(vet);
 		}
 
@@ -57,7 +60,7 @@ public class MedicalStaffList {
 			String[] medicalParts = medicalData.split(" ");
 			// Create a class for salary
 			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
-			trainVet = medicStaff.new TraineeVet(medicalParts[0], medicalParts[1], staffID, 0, "Trainee Veterinarian");
+			trainVet = medicStaff.new TraineeVet(medicalParts[0], medicalParts[1], staffID, Integer.parseInt(medicalParts[2]), "Trainee Veterinarian");
 			medicalStaff.add(trainVet);
 		}
 
@@ -67,7 +70,7 @@ public class MedicalStaffList {
 			String[] medicalParts = medicalData.split(" ");
 			// Create a class for salary
 			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
-			nurse = medicStaff.new Nurse(medicalParts[0], medicalParts[1], staffID, 0, "Nurse");
+			nurse = medicStaff.new Nurse(medicalParts[0], medicalParts[1], staffID, Integer.parseInt(medicalParts[2]), "Nurse");
 			medicalStaff.add(nurse);
 		}
 
@@ -77,7 +80,7 @@ public class MedicalStaffList {
 			String[] medicalParts = medicalData.split(" ");
 			// Create a class for salary
 			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
-			vetAssist = medicStaff.new VeterinarianAssistant(medicalParts[0], medicalParts[1], staffID, 0, "Veterinarian Assistant");
+			vetAssist = medicStaff.new VeterinarianAssistant(medicalParts[0], medicalParts[1], staffID, Integer.parseInt(medicalParts[2]), "Veterinarian Assistant");
 			medicalStaff.add(vetAssist);
 		}
 
@@ -87,10 +90,10 @@ public class MedicalStaffList {
 			String[] medicalParts = medicalData.split(" ");
 			// Create a class for salary
 			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
-			hairStyle = medicStaff.new PetHairStylist(medicalParts[0], medicalParts[1], staffID, 0, "Pet Hair Stylist");
+			hairStyle = medicStaff.new PetHairStylist(medicalParts[0], medicalParts[1], staffID, Integer.parseInt(medicalParts[2]), "Pet Hair Stylist");
 			medicalStaff.add(hairStyle);
 		}
-	
+		
 		return medicalStaff;
 	
 	}

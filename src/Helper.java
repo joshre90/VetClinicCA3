@@ -38,7 +38,7 @@ public class Helper {
 			//Validator
 			do {
 				System.out.println("--- Please Select the number for the task you would like to perform --- \n");
-				System.out.println("1 - List All Staff\n2 - List All Staff By Selecting Category\n3 - Search for a staff member by name\n4 - List all animals\n5 - List all animals by type \n6 - Search for an animal by their name \n");
+				System.out.println("1 - List All Staff\n2 - List All Staff By Selecting Category\n3 - List all the Admin staff performing a task" + "\n4 - Search for a staff member by name\n5 - List all animals\n6 - List all animals by type \n7 - Search for an animal by their name \n");
 				System.out.print("*Please select an option from the list above: ");
 				try {
 					userInput=Integer.parseInt(myReader.readLine());
@@ -135,9 +135,9 @@ public class Helper {
 		/// Loop that prints out each element of the medicalStaff ArrayList
 
 		
-		for (ClinicStaff as : adminStaff) {
-			System.out.println(as);
-		}
+//		for (ClinicStaff as : adminStaff) {
+//			System.out.println(as);
+//		}
 	}
 
 }
