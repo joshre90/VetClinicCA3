@@ -27,22 +27,28 @@ public class ListStaff {
 			role = "Trainee Veterinarian";
 			break;
 		case 3:
-			role = "";
+			role = "Nurse";
 			break;
 		case 4:
-			role = "";
+			role = "Veterinarian Assistant";
 			break;
 		case 5:
-			role = "";
+			role = "Pet Hair Stylist";
 			break;
 		case 6:
-			role = "";
+			role = "Manager";
 			break;
 		case 7:
-			role = "";
+			role = "Assistant";
 			break;
 		case 8:
-			role = "";
+			role = "Receptionist";
+			break;
+		case 9:
+			role = "Customer Service Rep";
+			break;
+		case 10:
+			role = "IT Techie";
 			break;
 		}
 

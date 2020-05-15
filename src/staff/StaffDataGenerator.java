@@ -5,8 +5,8 @@ import java.util.Random;
 public class StaffDataGenerator {
 
 
-	private String[] firstNames = { "Alan", "Richard", "Victoria", "Vivian", "Joe", "Diana", "Santiago", "John", "Ivan", "Robert","Lucy","Rebecca", "Maria", "Diana" }; //14
-    private String[] surnames= { "Dillinger", "Smith", "Gonzalez", "O'Keefe", "Hernandez", "Lopez", "Byrne", "Ivern", "Scalci", "Scott","Halpert", "Beesly" };//12
+	private String[] firstNames = { "Bruce","Alan", "Richard", "Victoria", "Vivian", "Joe", "Diana", "Santiago", "John", "Ivan", "Robert","Lucy","Rebecca", "Maria", "Diana" }; //14
+    private String[] surnames= { "Lee","Dillinger", "Smith", "Gonzalez", "O'Keefe", "Hernandez", "Lopez", "Byrne", "Ivern", "Scalci", "Scott","Halpert", "Beesly" };//12
     private int salary = 5;
     
     public StaffDataGenerator() {

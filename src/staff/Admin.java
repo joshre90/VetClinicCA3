@@ -2,24 +2,28 @@ package staff;
 
 public class Admin extends ClinicStaff{
 
+	public String task;
 	
-	public Admin(String firstName, String surname, int staffID, int salary, String title) {
+	public Admin(String firstName, String surname, int staffID, int salary, String title,String task) {
 		super(firstName, surname, staffID, salary, title);
+		this.task = task;
 		// TODO Auto-generated constructor stub
 	}
 
 
 	public class Manager extends ClinicStaff{
+		
+		private String task;
 
-		public Manager(String firstName, String surname, int staffID, int salary, String title) {
+		public Manager(String firstName, String surname, int staffID, int salary, String title, String task) {
 			super(firstName, surname, staffID, salary,title);
 			// TODO Auto-generated constructor stub
+			this.task=task;
 		}
 		
 		@Override
 		public String toString() {
-			
-			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary + " " + task;
 		}
 		
 	}
@@ -28,15 +32,17 @@ public class Admin extends ClinicStaff{
 	public class Assistant extends ClinicStaff{
 		
 		
+	private String task;
+
 	public Assistant (String firstName, String surname, int staffID, int salary, String title) {
 			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
+			this.task=task;
 		}
 	
 	@Override
 	public String toString() {
-		
-		return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
+		return title + ": " + firstName + " " + surname + " " + staffID + " " + salary + " " + task;
 	}
 
 	}
@@ -44,15 +50,17 @@ public class Admin extends ClinicStaff{
 	
 	public class Receptionist extends ClinicStaff{
 
+		private String task;
+
 		public Receptionist(String firstName, String surname, int staffID, int salary, String title) {
 			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
+			this.task=task;
 		}
 		
 		@Override
 		public String toString() {
-			
-			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary + " " + task;
 		}
 		
 	}
@@ -60,30 +68,34 @@ public class Admin extends ClinicStaff{
 	
 	public class CustomerService extends ClinicStaff{
 
+		private String task;
+
 		public CustomerService(String firstName, String surname, int staffID, int salary, String title) {
 			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
+			this.task=task;
 		}
 		
 		@Override
 		public String toString() {
-			
-			return title +  ": " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary + " " + task;
 		}
 		
 	}
 	
 	public class ITSupport extends ClinicStaff{
 
+		private String task;
+
 		public ITSupport(String firstName, String surname, int staffID, int salary, String title) {
 			super(firstName, surname, staffID, salary, title);
 			// TODO Auto-generated constructor stub
+			this.task=task;
 		}
 		
 		@Override
 		public String toString() {
-			
-			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary;
+			return title + ": " + firstName + " " + surname + " " + staffID + " " + salary + " " + task;
 		}
 		
 	}

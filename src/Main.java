@@ -13,12 +13,12 @@ public class Main {
 //		MedicalStaffList msl = new MedicalStaffList();
 //		msl.generateMedicalStaff();
 //		
-//		AdminStaffList asl = new AdminStaffList();
-//		asl.generateAdminStaff();
+		AdminStaffList asl = new AdminStaffList();
+		asl.generateAdminStaff();
 		
 		Helper help = new Helper();
 		//help.Helper();
-		help.execute();
+		//help.execute();
     
 }
 }

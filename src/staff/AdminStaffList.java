@@ -9,6 +9,7 @@ public class AdminStaffList {
 	private int staffID;
 	protected int salary;
 	private String title;
+	private String task;
 	private int j = 0; // Counter used for the staffID
 
 	// Number of medical staff to be generated
@@ -21,10 +22,12 @@ public class AdminStaffList {
 
 	// ArrayList from the Superclass ClinicStaff where Medical will be Stored
 	ArrayList<ClinicStaff> administrativeStaff = new ArrayList<ClinicStaff>();
-	Admin adminStaff = new Admin(firstName, surname, staffID, salary, title);
+	Admin adminStaff = new Admin(firstName, surname, staffID, salary, title,task);
 
 	// Instance of the class StaffDataGenerator
 	StaffDataGenerator sdg = new StaffDataGenerator();
+	//Instance to create a random task
+	AdminTaskGenerator atg = new AdminTaskGenerator();
 
 	// Instances of the inner classes of the class Medical
 	Admin.Manager manager;
@@ -39,9 +42,9 @@ public class AdminStaffList {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
-			// Create a class for salary
+			String task = atg.getRandomData();
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, 0, "Manager");
+			manager = adminStaff.new Manager(adminParts[0], adminParts[1], staffID, 0, "Manager", task);
 			administrativeStaff.add(manager);
 		}
 
@@ -87,6 +90,11 @@ public class AdminStaffList {
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
 			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, 0, "IT Techie");
 			administrativeStaff.add(itGuy);
+		}
+		
+		for (ClinicStaff ms : administrativeStaff) {
+			// System.out.println(ms.getFirstName() + ms.getSurname() + ms.getTitle());
+			System.out.println(ms);
 		}
 
 
