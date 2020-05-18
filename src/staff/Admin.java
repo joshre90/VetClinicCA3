@@ -2,33 +2,18 @@ package staff;
 
 public class Admin extends ClinicStaff{
 
-	public String task;
-	
-	public String getTask() {
-		return task;
-	}
-
-
-	public void setTask(String task) {
-		this.task = task;
-	}
-
 
 	public Admin(String firstName, String surname, int staffID, int salary, String title,String task) {
-		super(firstName, surname, staffID, salary, title);
-		this.task = task;
+		super(firstName, surname, staffID, salary, title, task);
 		// TODO Auto-generated constructor stub
 	}
 
 
 	public class Manager extends ClinicStaff{
-		
-		private String task;
 
 		public Manager(String firstName, String surname, int staffID, int salary, String title, String task) {
-			super(firstName, surname, staffID, salary,title);
+			super(firstName, surname, staffID, salary, title, task);
 			// TODO Auto-generated constructor stub
-			this.task=task;
 		}
 		
 		@Override
@@ -40,14 +25,10 @@ public class Admin extends ClinicStaff{
 	
 	
 	public class Assistant extends ClinicStaff{
-		
-		
-	private String task;
 
-	public Assistant (String firstName, String surname, int staffID, int salary, String title) {
-			super(firstName, surname, staffID, salary, title);
+	public Assistant (String firstName, String surname, int staffID, int salary, String title, String task) {
+		super(firstName, surname, staffID, salary, title, task);
 			// TODO Auto-generated constructor stub
-			this.task=task;
 		}
 	
 	@Override
@@ -60,12 +41,10 @@ public class Admin extends ClinicStaff{
 	
 	public class Receptionist extends ClinicStaff{
 
-		private String task;
-
-		public Receptionist(String firstName, String surname, int staffID, int salary, String title) {
-			super(firstName, surname, staffID, salary, title);
+		public Receptionist(String firstName, String surname, int staffID, int salary, String title, String task) {
+			super(firstName, surname, staffID, salary, title, task);
 			// TODO Auto-generated constructor stub
-			this.task=task;
+
 		}
 		
 		@Override
@@ -78,12 +57,9 @@ public class Admin extends ClinicStaff{
 	
 	public class CustomerService extends ClinicStaff{
 
-		private String task;
-
-		public CustomerService(String firstName, String surname, int staffID, int salary, String title) {
-			super(firstName, surname, staffID, salary, title);
+		public CustomerService(String firstName, String surname, int staffID, int salary, String title, String task) {
+			super(firstName, surname, staffID, salary, title, task);
 			// TODO Auto-generated constructor stub
-			this.task=task;
 		}
 		
 		@Override
@@ -95,12 +71,10 @@ public class Admin extends ClinicStaff{
 	
 	public class ITSupport extends ClinicStaff{
 
-		private String task;
-
-		public ITSupport(String firstName, String surname, int staffID, int salary, String title) {
-			super(firstName, surname, staffID, salary, title);
+		public ITSupport(String firstName, String surname, int staffID, int salary, String title, String task) {
+			super(firstName, surname, staffID, salary, title, task);
 			// TODO Auto-generated constructor stub
-			this.task=task;
+
 		}
 		
 		@Override

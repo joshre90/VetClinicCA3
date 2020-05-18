@@ -8,6 +8,7 @@ public class AnimalList{
 		protected String name;
 		protected String condition;
 		protected int age;
+		protected String type;
 
 		//Number of animals to be generated
 		private int numOfAnimals = 100; //(1000) This can change according to user input
@@ -23,7 +24,7 @@ public class AnimalList{
 
 
 		protected ArrayList<PetAnimals> animals = new ArrayList<PetAnimals>();
-		Animal an = new Animal(name, age, condition);
+		Animal an = new Animal(name, age, condition, type);
 
 		AnimalDataGenerator adg = new AnimalDataGenerator();
 
@@ -41,12 +42,12 @@ public class AnimalList{
 
 
 		//Method that generates the animals
-	  public void generateAnimals() { 
+	  public ArrayList<PetAnimals> generateAnimals() { 
 	  ///Loop to generate dogs
 	  for (int i=0; i<numDogs; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  dog = an.new dog(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  dog = an.new dog(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Dog");
 		  animals.add(dog);
 	  }
 
@@ -54,7 +55,7 @@ public class AnimalList{
 	  for (int i=0; i<numCats; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  cat = an.new cat(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  cat = an.new cat(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Cat");
 		  animals.add(cat);
 	  }
 
@@ -62,7 +63,7 @@ public class AnimalList{
 	  for (int i=0; i<numRabbits; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  rabbit = an.new rabbit(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  rabbit = an.new rabbit(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Rabbit");
 		  animals.add(rabbit);
 	  }
 
@@ -70,7 +71,7 @@ public class AnimalList{
 	  for (int i=0; i<numMouse; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  mouse = an.new mouse(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  mouse = an.new mouse(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Mouse");
 		  animals.add(mouse);
 	  }
 
@@ -78,15 +79,15 @@ public class AnimalList{
 	  for (int i=0; i<numHorse; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  horse = an.new horse(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  horse = an.new horse(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Horse");
 		  animals.add(horse);
 	  }
 
-	///Loop to generate lizzard
+	///Loop to generate lizard
 	  for (int i=0; i<numLizzard; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  lizzard = an.new lizzard(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  lizzard = an.new lizzard(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Lizard");
 		  animals.add(lizzard);
 	  }
 
@@ -95,7 +96,7 @@ public class AnimalList{
 	  for (int i=0; i<numSneak; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  snek = an.new snek(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  snek = an.new snek(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Sneak");
 		  animals.add(snek);
 	  }
 
@@ -104,7 +105,7 @@ public class AnimalList{
 	  for (int i=0; i<numFish; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  fish = an.new fish(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  fish = an.new fish(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Fish");
 		  animals.add(fish);
 	  }
 
@@ -113,14 +114,16 @@ public class AnimalList{
 	  for (int i=0; i<numParrot; i++ ) {
 		  String animalData = adg.getRandomData();
 		  String [] animalParts = animalData.split(" ");
-		  parrot = an.new parrot(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
+		  parrot = an.new parrot(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2],"Parrot");
 		  animals.add(parrot);
 	  }
 
 
-	  for (PetAnimals pa : animals) {
-		  System.out.println(pa);
-	  }
+//	  for (PetAnimals pa : animals) {
+//		  System.out.println(pa);
+//	  }
+	  
+	return animals;
 
 	  }
 

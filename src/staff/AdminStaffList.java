@@ -54,9 +54,9 @@ public class AdminStaffList {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
-			// Create a class for salary
+			task = atg.getRandomData();
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Assistant");
+			assistant = adminStaff.new Assistant(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Assistant", task);
 			administrativeStaff.add(assistant);
 		}
 
@@ -65,9 +65,9 @@ public class AdminStaffList {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
-			// Create a class for salary
+			task = atg.getRandomData();
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Receptionist");
+			receptionist = adminStaff.new Receptionist(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Receptionist", task);
 			administrativeStaff.add(receptionist);
 		}
 
@@ -76,9 +76,9 @@ public class AdminStaffList {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
-			// Create a class for salary
+			task = atg.getRandomData();
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Customer Service Rep");
+			customServ = adminStaff.new CustomerService(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "Customer Service Rep", task);
 			administrativeStaff.add(customServ);
 		}
 
@@ -87,9 +87,9 @@ public class AdminStaffList {
 			j++;
 			String adminData = sdg.getRandomData();
 			String[] adminParts = adminData.split(" ");
-			// Create a class for salary
+			task = atg.getRandomData();
 			int staffID = adminStaff.generateStaffID(j); // Method to generate the id
-			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "IT Techie");
+			itGuy = adminStaff.new ITSupport(adminParts[0], adminParts[1], staffID, Integer.parseInt(adminParts[2]), "IT Techie", task);
 			administrativeStaff.add(itGuy);
 		}
 

@@ -8,8 +8,10 @@ public abstract class ClinicStaff {
 	protected final int staffID;
 	protected int salary;
 	protected String title;
+	protected String task;
 	
 	
+
 
 	public ClinicStaff(String firstName, String surname, int staffID, int salary, String title) {
 
@@ -20,6 +22,18 @@ public abstract class ClinicStaff {
 		this.title = title;
 		
 	}
+	
+	public ClinicStaff(String firstName, String surname, int staffID, int salary, String title, String task) {
+
+		this.firstName = firstName;
+		this.surname = surname;
+		this.staffID = staffID;
+		this.salary = salary;
+		this.title = title;
+		this.task = task;
+	}
+	
+
 	
 	public String getFirstName() {
 		return firstName;
@@ -70,6 +84,13 @@ public abstract class ClinicStaff {
 	}
 
 
+	public String getTask() {
+		return task;
+	}
+
+	public void setTask(String task) {
+		this.task = task;
+	}
 
 
 	

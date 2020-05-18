@@ -5,7 +5,7 @@ import java.util.Random;
 public class AdminTaskGenerator {
 
 
-	String[] tasks = {"Making copies" , "Preparing coffee", "Taking Calls" , "Sending Fax", "Sending E-mail", "Attending a meeting", "Writting a report", "Coordinating activities", "Suplying inventory", "Setting up a computer", "Speaking to a customer" , "Booking an event", "Cleaning desk", "Having lunch", "On holidays", "Absent for today" , "Using toilet"};
+	String[] tasks = {"Making copies" , "Preparing coffee", "Taking Calls" , "Sending Fax", "Sending E-mail", "Attending a meeting", "Writting a report", "Coordinating activities", "Supplying inventory", "Setting up a computer", "Speaking to a customer" , "Booking an event", "Cleaning desk", "Having lunch", "On holidays", "Absent for today" , "Using toilet", };
 	
 	public AdminTaskGenerator(){
 		

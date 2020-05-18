@@ -2,11 +2,9 @@ package animal;
 
 public class Animal extends PetAnimals{
 	
-
-
 	//Constructor
-	public Animal(String name, int age, String medCondition) {
-		super(name, age, medCondition);
+	public Animal(String name, int age, String medCondition, String type) {
+		super(name, age, medCondition,type);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -14,8 +12,8 @@ public class Animal extends PetAnimals{
 
 	public class rabbit extends PetAnimals{
 
-		public rabbit(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public rabbit(String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 
@@ -31,8 +29,8 @@ public class Animal extends PetAnimals{
 	
 	public class cat extends Animal{
 
-		public cat(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public cat(String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -48,8 +46,8 @@ public class Animal extends PetAnimals{
 	
 	public class dog extends PetAnimals{
 
-		public dog(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public dog(String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 		}
 		
 		@Override
@@ -65,8 +63,8 @@ public class Animal extends PetAnimals{
 	
 	public class mouse extends PetAnimals{
 
-		public mouse(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public mouse(String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -83,8 +81,8 @@ public class Animal extends PetAnimals{
 	
 	public class horse extends PetAnimals{
 
-		public horse(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public horse(String name, int age, String medCondition, String type){
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -100,8 +98,8 @@ public class Animal extends PetAnimals{
 	
 	public class lizzard extends PetAnimals{
 
-		public lizzard(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public lizzard(String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -117,8 +115,8 @@ public class Animal extends PetAnimals{
 	//Real class name is sneak, but memes had to made me change it
 	public class snek extends PetAnimals{
 
-		public snek(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public snek(String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -134,8 +132,8 @@ public class Animal extends PetAnimals{
 	
 	public class parrot extends PetAnimals{
 
-		public parrot (String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public parrot (String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -148,11 +146,10 @@ public class Animal extends PetAnimals{
 	}
 	
 	
-	
 	public class fish extends PetAnimals{
 
-		public fish(String name, int age, String medCondition) {
-			super(name, age, medCondition);
+		public fish(String name, int age, String medCondition, String type) {
+			super(name, age, medCondition,type);
 			// TODO Auto-generated constructor stub
 		}
 		
