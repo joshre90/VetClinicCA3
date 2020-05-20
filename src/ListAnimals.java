@@ -98,9 +98,9 @@ public class ListAnimals {
 				System.out.println("------\n" + "\nName: " + an.getName() + "\nCondition: " + an.getMedCondition()
 						+ "\nAnimal Type: " + animalClass + "\n");
 			}
-			if (animalClass == null) {
-				System.out.println("\nThe are no animals with that name");
-			}
+		}
+		if (animalClass == null) {
+			System.out.println("\nThe are no animals with that name");
 		}
 
 	}

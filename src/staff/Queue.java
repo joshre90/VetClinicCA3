@@ -43,16 +43,27 @@ public class Queue {
 
 	@Override
 	public String toString() {
-		String toReturn = "";
+		String toReturn = "-\n";
 		PetAnimals current = this.first;
-
 		while (current != null) {
-			toReturn += current + " ";
+			toReturn += current.toString() + "\n-\n";
 			current = current.getNext();
 		}
-
 		return toReturn;
 
 	}
+	
+	
+	public PetAnimals getFirst() {
+		return first;
+	}
 
+	public void setFirst(PetAnimals first) {
+		this.first = first;
+	}
+	
+	public int getSize() {
+		return size;
+	}
+	
 }

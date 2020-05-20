@@ -2,6 +2,7 @@ package animal;
 
 public class Animal extends PetAnimals {
 
+	
 	// Constructor
 	public Animal(String name, int age, String medCondition) {
 		super(name, age, medCondition);
@@ -18,7 +19,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Rabbit" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 
 	}
@@ -33,7 +34,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Cat" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 
 	}
@@ -47,7 +48,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Dog" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 
 	}
@@ -62,7 +63,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Mouse" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 	}
 
@@ -76,7 +77,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Horse" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 
 	}
@@ -91,7 +92,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Lizard" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 	}
 
@@ -105,7 +106,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Sneak" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 
 	}
@@ -120,7 +121,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Parrot" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 
 	}
@@ -135,7 +136,7 @@ public class Animal extends PetAnimals {
 		@Override
 		public String toString() {
 
-			return name + " " + age + " " + medCondition;
+			return "Type: Fish" + "\nName: " + name + "\nAge: " + age + "\nMedical Condition: " +  medCondition;
 		}
 
 	}

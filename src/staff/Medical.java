@@ -2,8 +2,12 @@ package staff;
 
 public class Medical extends ClinicStaff {
 
+	private Queue animalQueue;
+	
 	public Medical(String firstName, String surname, int staffID, int salary) {
 		super(firstName, surname, staffID, salary);
+		
+		this.animalQueue = new Queue();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -87,6 +91,15 @@ public class Medical extends ClinicStaff {
 		int staffID = 1000; // ID for medical staff start in 1000
 		staffID += i;
 		return staffID;
+	}
+	
+	
+	public Queue getAnimalQueue() {
+		return animalQueue;
+	}
+
+	public void setAnimalQueue(Queue animalQueue) {
+		this.animalQueue = animalQueue;
 	}
 
 }

@@ -1,5 +1,7 @@
 package staff;
 
+import animal.PetAnimals;
+
 public abstract class ClinicStaff {
 
 	protected String firstName;
@@ -7,6 +9,8 @@ public abstract class ClinicStaff {
 	protected final int staffID;
 	protected int salary;
 	protected String task;
+	
+	private Queue animalQueue;
 
 	public ClinicStaff(String firstName, String surname, int staffID, int salary) {
 
@@ -14,6 +18,8 @@ public abstract class ClinicStaff {
 		this.surname = surname;
 		this.staffID = staffID;
 		this.salary = salary;
+		
+		this.animalQueue = new Queue();
 
 	}
 
@@ -60,6 +66,14 @@ public abstract class ClinicStaff {
 
 	public void setTask(String task) {
 		this.task = task;
+	}
+	
+	public Queue getAnimalQueue() {
+		return animalQueue;
+	}
+
+	public void setAnimalQueue(PetAnimals animal) {
+		this.animalQueue.add(animal);
 	}
 
 }

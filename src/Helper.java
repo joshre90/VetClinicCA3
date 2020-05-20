@@ -16,7 +16,7 @@ public class Helper {
 
 	// ArrayList of the Abstract (Parent) class used to store the medical and admin
 	// staff
-	ArrayList<ClinicStaff> medicalStaff = new ArrayList<ClinicStaff>();
+	ArrayList<ClinicStaff> medicalStaff = new ArrayList<ClinicStaff>(); //ArrayList of Superclass ClinicStaff 
 	ArrayList<ClinicStaff> adminStaff = new ArrayList<ClinicStaff>();
 	ArrayList<PetAnimals> animals = new ArrayList<PetAnimals>();
 
@@ -26,18 +26,24 @@ public class Helper {
 	AnimalList al = new AnimalList();
 	ListStaff ls = new ListStaff();
 	ListAnimals la = new ListAnimals();
+	ListQueue fq = new ListQueue();
 
 	String name;
 	String surname;
+	int ID;
 
 	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
 	boolean flag = false;
+
+	PetAnimals queueAnimal;
 
 	public void execute() {
 
 		this.medicalStaff = msl.generateMedicalStaff();
 		this.adminStaff = asl.generateAdminStaff();
 		this.animals = al.generateAnimals();
+
+		medicalStaff = fq.FillQueue(medicalStaff, animals);
 
 		boolean valid = false;// boolean flag
 		int userInput = 0;
@@ -50,13 +56,13 @@ public class Helper {
 		do {
 			System.out.println("\n--- Please Select the number for the task you would like to perform --- \n");
 			System.out.println(
-					"1 - List All Staff\n2 - List All Staff By Selecting Category\n3 - List all the Admin staff performing a task"
-							+ "\n4 - Search for a staff member by name\n5 - List all animals\n6 - List all animals by type \n7 - Search for an animal by their name \n---");
+					"1  - List All Staff\n2  - List All Staff By Selecting Category\n3  - List all the Admin staff performing a task"
+							+ "\n4  - Search for a staff member by name\n5  - List all animals\n6  - List all animals by type \n7  - Search for an animal by their name \n8  - List all the animals assigned to staff members \n9  - List of pets looked after a member of staff \n10 - For a given member of the medical staff, pass to the next pet \n---");
 			System.out.println("0 - Exit the program");
 			System.out.print("\nOption: ");
 			try {
 				userInput = Integer.parseInt(myReader.readLine());
-				if (0 <= userInput && userInput <= 7) {
+				if (0 <= userInput && userInput <= 10) {
 					switch (userInput) {
 					// Exit program
 					case 0:
@@ -74,7 +80,7 @@ public class Helper {
 
 						System.out.print("\n--------------------------------------------------------\n");
 						System.out.println("Select a category which you want to list the staff from: ");
-						System.out.println("    MEDICAL STAFF");
+						System.out.println("\n    MEDICAL STAFF");
 						System.out.println(
 								"1 - Veterinarian \n2 - Trainee Veterinarian \n3 - Nurse \n4 - Assistant Veterinarian \n5 - Pet Hair Stylist\n");
 						System.out.println("    ADMINISTRATIVE STAFF");
@@ -137,6 +143,39 @@ public class Helper {
 						la.listAnimalsByName(animals, name);
 
 						break;
+
+					case 8:
+						// medicalStaff = fq.FillQueue(medicalStaff, animals);
+						fq.printQueue(medicalStaff);
+						break;
+
+					case 9:
+						
+						System.out.print("\n--------------------------------------------------------\n");
+						System.out.print("Please type in the name of the staff you are looking for: ");
+						name = myReader.readLine();
+
+						System.out.print("Please type in the lastname of the staff you are looking for: ");
+						surname = myReader.readLine();
+						ID = validatorCase9();
+						
+						fq.staffSearchQueue(medicalStaff, name, surname, ID);
+
+						
+						break;
+
+					case 10:
+						
+						System.out.print("\n--------------------------------------------------------\n");
+						System.out.print("Please type in the name of the staff you are looking for: ");
+						name = myReader.readLine();
+
+						System.out.print("Please type in the lastname of the staff you are looking for: ");
+						surname = myReader.readLine();
+						ID = validatorCase9();
+						
+						fq.staffQueue(medicalStaff, name, surname, ID);
+						break;
 					// (Redundant) In case there is an invalid input
 					default:
 						System.out.println("Invalid input");
@@ -144,13 +183,13 @@ public class Helper {
 						break;
 					}
 				} else {
-					System.out.println("Invalid input. PLease select a number between 0 and 6");
+					System.out.println("Invalid input. PLease select a number between 0 and 10");
 					valid = false;
 				}
 
 			} catch (Exception e) {
 				valid = false;
-				System.out.println("ERROR! You did not enter a number between 1 and 6!");
+				System.out.println("ERROR! You did not enter a number between 1 and 10!");
 			}
 
 		} while (!valid);
@@ -208,6 +247,27 @@ public class Helper {
 				System.out.println("ERROR! You did not enter a number between 0 and 9!");
 			}
 		} while (!flag);
+	}
+
+
+	public int validatorCase9() {
+		flag = false;
+		ID=0;
+		do {
+			System.out.print("Please type in the ID of the staff (number between 1000 and " + (medicalStaff.size()+1000) +" or 0 if not known): ");
+			
+			try {
+				ID = Integer.parseInt(myReader.readLine());
+				flag=true;
+			} catch (Exception e) {
+				flag = false;
+				System.out.println("ERROR! You did not enter a number!");
+				
+			}
+		} while (!flag);
+				
+		return ID;
+		
 	}
 
 }

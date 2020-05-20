@@ -9,7 +9,14 @@ public class ListStaff {
 
 	// METHOD THAT LISTS ALL THE STAFF
 	public void listnames(ArrayList<ClinicStaff> staff) {
-		System.out.println("\n\n---------------------------\nTHE STAFF IN THE CLINIC IS:\n");
+		
+		
+		if (staff.get(0) instanceof Medical.Veterinarian) {
+			System.out.println("\n\n----------------------------------\nTHE MEDICAL STAFF IN THE CLINIC IS:\n");
+		}
+		else {
+			System.out.println("\n\n--------------------------------\nTHE ADMIN STAFF IN THE CLINIC IS:\n");	
+		}
 
 		for (ClinicStaff ms : staff) {
 			roleClass = getSimpleStaffName(ms);
@@ -17,7 +24,7 @@ public class ListStaff {
 					+ "\nEmployeed ID: " + ms.getStaffID() + "\nAnnual Salary: " + ms.getSalary() + "\n\n------");
 		}
 
-		System.out.println("\n\n\n");
+		System.out.println("\n\n");
 
 	}
 
@@ -85,10 +92,10 @@ public class ListStaff {
 
 		if (staff.get(0) instanceof Medical.Veterinarian) {
 			System.out.print(
-					"\nMedical employees' names that contain '" + staffName + "' and '" + staffSurname + "' are: \n");
+					"\nMedical employees' names that contain Name: '" + staffName + "' and  Surname: '" + staffSurname + "' are: \n");
 			for (ClinicStaff ms : staff) {
-				if (ms.getFirstName().toLowerCase().equals(staffName.toLowerCase())
-						|| ms.getSurname().toLowerCase().equals(staffSurname.toLowerCase())) {
+				if (ms.getFirstName().trim().toLowerCase().equals(staffName.toLowerCase())
+						|| ms.getSurname().trim().toLowerCase().equals(staffSurname.toLowerCase())) {
 					staffClass = getSimpleStaffName(ms);
 					System.out.println("------\n" + "\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
 							+ staffClass + "\n");
