@@ -91,32 +91,34 @@ public class ListStaff {
 		String staffClass = null;
 
 		if (staff.get(0) instanceof Medical.Veterinarian) {
-			System.out.print(
-					"\nMedical employees' names that contain Name: '" + staffName + "' and  Surname: '" + staffSurname + "' are: \n");
+			System.out.print("\n--  --  --  --  --  --  --  --  --");
+			System.out.println(
+					"\nMedical employees' names that contain Name: '" + staffName + "' or  Surname: '" + staffSurname + "' are: \n");
 			for (ClinicStaff ms : staff) {
 				if (ms.getFirstName().trim().toLowerCase().equals(staffName.toLowerCase())
 						|| ms.getSurname().trim().toLowerCase().equals(staffSurname.toLowerCase())) {
 					staffClass = getSimpleStaffName(ms);
-					System.out.println("------\n" + "\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
-							+ staffClass + "\n");
+					System.out.println("\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
+							+ staffClass + "\n------");
 				}
 			}
 			if (staffClass == null) {
-				System.out.println("\nThe are no medical staff members with that name");
+				System.out.println("\n***The are no admin staff members with that name***\n");
 			}
 		} else {
-			System.out.print(
-					"\nAdmin employees' names that contain '" + staffName + "' and '" + staffSurname + "' are: \n");
+			System.out.print("\n--  --  --  --  --  --  --  --  --");
+			System.out.println(
+					"\nAdmin employees' names that contain '" + staffName + "' or '" + staffSurname + "' are: \n");
 			for (ClinicStaff ms : staff) {
 				if (ms.getFirstName().toLowerCase().equals(staffName.toLowerCase())
 						|| ms.getSurname().toLowerCase().equals(staffSurname.toLowerCase())) {
 					staffClass = getSimpleStaffName(ms);
-					System.out.println("------\n" + "\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
-							+ staffClass + "\n");
+					System.out.println("\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
+							+ staffClass + "\n------");
 				}
 			}
 			if (staffClass == null) {
-				System.out.println("\nThe are no admin staff members with that name");
+				System.out.println("\n***The are no admin staff members with that name***\n");
 			}
 		}
 	}

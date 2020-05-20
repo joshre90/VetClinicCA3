@@ -89,7 +89,7 @@ public class ListQueue {
 		do {
 			System.out.println(staff.getFirstName() + " " + staff.getSurname() + " is now attending:");
 			System.out.println(staff.getAnimalQueue().getFirst().toString() + "\n");
-			System.out.print("Would you like " + "name" + " attend the next pet? Please type Yes(y) or No(n): ");
+			System.out.print("Would you like " + staff.getFirstName() + " " + staff.getSurname()+ " attend the next pet? Please type Yes(y) or No(n): ");
 			
 			try {
 				userChoice = myReader.readLine();
