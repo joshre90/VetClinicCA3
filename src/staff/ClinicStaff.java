@@ -2,14 +2,19 @@ package staff;
 
 import animal.PetAnimals;
 
+/**
+ * @author Joshua Reyes - Student ID 2019364 - HDIP Sept 2019
+ */
+
+//Super class for staff
 public abstract class ClinicStaff {
 
+	// Attributes of staff
 	protected String firstName;
 	protected String surname;
 	protected final int staffID;
 	protected int salary;
 	protected String task;
-
 	private Queue animalQueue;
 
 	public ClinicStaff(String firstName, String surname, int staffID, int salary) {

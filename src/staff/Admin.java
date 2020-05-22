@@ -1,5 +1,10 @@
 package staff;
 
+/**
+ * @author Joshua Reyes - Student ID 2019364 - HDIP Sept 2019
+ */
+
+//Sub class of ClinicStaff, it is composed of inner classes that are also subclasses of ClinicStaff
 public class Admin extends ClinicStaff {
 
 	public Admin(String firstName, String surname, int staffID, int salary, String task) {
@@ -77,13 +82,6 @@ public class Admin extends ClinicStaff {
 			return firstName + " " + surname + " " + staffID + " " + salary + " " + task;
 		}
 
-	}
-
-	//// Method that generates the number ID
-	public int generateStaffID(int i) {
-		int staffID = 2000; // ID for medical staff starts in 2000
-		staffID += i;
-		return staffID;
 	}
 
 }

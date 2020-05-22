@@ -1,5 +1,10 @@
 package animal;
 
+/**
+ * @author Joshua Reyes - Student ID 2019364 - HDIP Sept 2019
+ */
+
+//Sub class of PetAnimals, it is composed of inner classes that are also subclasses of PetAnimals
 public class Animal extends PetAnimals {
 
 	// Constructor
@@ -7,7 +12,10 @@ public class Animal extends PetAnimals {
 		super(name, age, medCondition);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/*
+	 * Inner Animal classes
+	 */
 	public class Rabbit extends PetAnimals {
 
 		public Rabbit(String name, int age, String medCondition) {

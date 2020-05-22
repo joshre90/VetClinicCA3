@@ -1,7 +1,13 @@
 package animal;
 
+/**
+* @author Joshua Reyes - Student ID 2019364 - HDIP Sept 2019
+*/
+
+//Super class for animals
 public abstract class PetAnimals {
 
+	//Attributes of animals
 	protected String name;
 	protected int age;
 	protected String medCondition;

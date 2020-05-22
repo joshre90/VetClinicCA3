@@ -1,13 +1,14 @@
 package staff;
 
-public class Medical extends ClinicStaff {
+/**
+ * @author Joshua Reyes - Student ID 2019364 - HDIP Sept 2019
+ */
 
-	private Queue animalQueue;
+//Sub class of ClinicStaff, it is composed of inner classes that are also subclasses of ClinicStaff
+public class Medical extends ClinicStaff {
 
 	public Medical(String firstName, String surname, int staffID, int salary) {
 		super(firstName, surname, staffID, salary);
-
-		this.animalQueue = new Queue();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -84,21 +85,6 @@ public class Medical extends ClinicStaff {
 			return firstName + " " + surname + " " + staffID + " " + salary;
 		}
 
-	}
-
-	//// Method that generates the number ID
-	public int generateStaffID(int i) {
-		int staffID = 1000; // ID for medical staff start in 1000
-		staffID += i;
-		return staffID;
-	}
-
-	public Queue getAnimalQueue() {
-		return animalQueue;
-	}
-
-	public void setAnimalQueue(Queue animalQueue) {
-		this.animalQueue = animalQueue;
 	}
 
 }

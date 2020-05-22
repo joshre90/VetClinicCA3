@@ -2,6 +2,10 @@ package animal;
 
 import java.util.ArrayList;
 
+/**
+ * @author Joshua Reyes - Student ID 2019364 - HDIP Sept 2019
+ */
+
 public class AnimalList {
 
 	// protected String animalData;
@@ -9,22 +13,27 @@ public class AnimalList {
 	protected String condition;
 	protected int age;
 
-	// Number of animals to be generated
-	private int numOfAnimals = 100; // (1000) This can change according to user input
-	private int numDogs = (int) (numOfAnimals * 0.45);
-	private int numCats = (int) (numOfAnimals * 0.20);
-	private int numRabbits = (int) (numOfAnimals * .05);
+	// Number of animals to be generated, it has been calculated based on
+	// information of averages visits to the veterinary.
+	// Dog (from 65% to 45%) and cat (from 30% to 20%) percentages had been reduce
+	// to leave space to other animals in the list
+	private int numOfAnimals = 100; // Number of animals to be created
+	private int numDogs = (int) (numOfAnimals * 0.45); // 45% of animals are dogs
+	private int numCats = (int) (numOfAnimals * 0.20); // 20% cats
+	private int numRabbits = (int) (numOfAnimals * .05);// 5% each
 	private int numMouse = (int) (numOfAnimals * .05);
 	private int numHorse = (int) (numOfAnimals * .05);
 	private int numSneak = (int) (numOfAnimals * .05);
 	private int numLizzard = (int) (numOfAnimals * .05);
 	private int numFish = (int) (numOfAnimals * .05);
 	private int numParrot = numOfAnimals - numDogs - numCats - numRabbits - numMouse - numHorse - numSneak - numLizzard
-			- numFish;
+			- numFish; // In case percentages are rounded, number of parrots is the remaining from all
+						// animals
 
-	protected ArrayList<PetAnimals> animals = new ArrayList<PetAnimals>();
+	// Instance used to generate each animal
 	Animal an = new Animal(name, age, condition);
 
+	// Instance used to generate random information for each animal
 	AnimalDataGenerator adg = new AnimalDataGenerator();
 
 	// Instances of the inner classes of the class Animal
@@ -38,22 +47,22 @@ public class AnimalList {
 	Animal.Sneak snek;
 	Animal.Parrot parrot;
 
-	// //Trying to generate random animals
-	// public ArrayList<PetAnimals> generateAnimals2() {
-	//
-	// for (int i = 0; i<= numOfAnimals; i++) {
-	// }
-	// return animals;
-	// }
+	// Method that generates the animals, takes an ArrayList of animals as a
+	// parameter
+	public ArrayList<PetAnimals> generateAnimals(ArrayList<PetAnimals> animals) {
 
-	// Method that generates the animals
-	public ArrayList<PetAnimals> generateAnimals() {
+		// Each for loop uses the same principle and structure, only dog loop is
+		// explained
+
 		/// Loop to generate dogs
-		for (int i = 0; i < numDogs; i++) {
-			String animalData = adg.getRandomData();
-			String[] animalParts = animalData.split(" ");
-			dog = an.new Dog(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]);
-			animals.add(dog);
+		for (int i = 0; i < numDogs; i++) { // It will create the amount of dogs calculated above - Line 21
+			String animalData = adg.getRandomData(); // String that generates random data - Class AnimalDataGenerator -
+														// package animal - Line 9
+			String[] animalParts = animalData.split(" "); // Splits the string into a Array elements
+			dog = an.new Dog(animalParts[0], Integer.parseInt(animalParts[1]), animalParts[2]); // Assigns the
+																								// information to the
+																								// instance created
+			animals.add(dog); // Adds instance to Superclass ArrayList
 		}
 
 		/// Loop to generate cats
@@ -120,10 +129,7 @@ public class AnimalList {
 			animals.add(parrot);
 		}
 
-		// for (PetAnimals pa : animals) {
-		// System.out.println(pa);
-		// }
-
+		// Returns the ArrayList already filled with animals
 		return animals;
 
 	}

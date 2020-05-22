@@ -2,6 +2,10 @@ package staff;
 
 import animal.PetAnimals;
 
+/**
+ * @author Amilcar Aponte - Collections Class - Week 9 March - 15 March
+ */
+
 public class Queue {
 
 	private PetAnimals first;

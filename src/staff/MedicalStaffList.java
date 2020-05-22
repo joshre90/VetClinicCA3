@@ -2,9 +2,13 @@ package staff;
 
 import java.util.ArrayList;
 
+/**
+ * @author Joshua Reyes - Student ID 2019364 - HDIP Sept 2019
+ */
+
 public class MedicalStaffList {
 
-	// protected String animalData;
+	// protected String medical staff Data;
 	private String firstName;
 	private String surname;
 	private int staffID;
@@ -13,15 +17,12 @@ public class MedicalStaffList {
 
 	// Number of medical staff to be generated, it is calculated on a percentage
 	// level in case the total of medical staff varies
-	private int numMedicalStaff = 30; // Total number of medical Staff
-	private int numVeterinarian = (int) (numMedicalStaff * 0.25);
-	private int numTraineeVet = (int) (numMedicalStaff * 0.1);
-	private int numNurse = (int) (numMedicalStaff * 0.35);
-	private int numVetAssistant = (int) (numMedicalStaff * 0.20);
-	private int petHairStylist = numMedicalStaff - numVeterinarian - numTraineeVet - numNurse - numVetAssistant;
-
-	// ArrayList from the Superclass ClinicStaff where Medical will be Stored
-	ArrayList<ClinicStaff> medicalStaff = new ArrayList<ClinicStaff>();
+	private int numMedicalStaff = 30; // Total number of medical Staff to be generated
+	private int numVeterinarian = (int) (numMedicalStaff * 0.25); // 25% are Veterinarians
+	private int numTraineeVet = (int) (numMedicalStaff * 0.1);// 10%
+	private int numNurse = (int) (numMedicalStaff * 0.35); // 35%
+	private int numVetAssistant = (int) (numMedicalStaff * 0.20); // 20%
+	private int petHairStylist = numMedicalStaff - numVeterinarian - numTraineeVet - numNurse - numVetAssistant; // Remaining
 
 	// Instance of the class Medical that will be used to create instances of its
 	// inner classes
@@ -41,26 +42,35 @@ public class MedicalStaffList {
 
 	// Method that generates all the medical staff and populates the parent class
 	// array
-	public ArrayList<ClinicStaff> generateMedicalStaff() {
-		/// Loop to generate veterinarians
-		// note the counter for the staff ID is increasing with each cycle of the for
-		/// loop
-		for (int i = 0; i < numVeterinarian; i++, j++) {
-			String medicalData = sdg.getRandomData();
-			String[] medicalParts = medicalData.split(" ");
-			// Create a class for salary
-			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
+	public ArrayList<ClinicStaff> generateMedicalStaff(ArrayList<ClinicStaff> medicalStaff) {
+		/*
+		 * Note the counter for the staff ID (j) is increasing with each cycle of the
+		 * for loop
+		 */
+
+		// Each for loop uses the same principle and structure, only Veterinarian loop
+		// is explained
+		for (int i = 0; i < numVeterinarian; i++, j++) { // It will create the amount of Vets calculated above - Line 20
+
+			String medicalData = sdg.getRandomData(); // String that generates random data - Class StaffDataGenerator -
+														// package staff - Line 9
+
+			String[] medicalParts = medicalData.split(" "); // Splits the string into a Array elements
+
+			int staffID = sdg.generateMStaffID(j); // Method to generate the ID - Class StaffDataGenerator -
+													// package staff - Line 69
+
 			vet = medicStaff.new Veterinarian(medicalParts[0], medicalParts[1], staffID,
-					Integer.parseInt(medicalParts[2]));
-			medicalStaff.add(vet);
+					Integer.parseInt(medicalParts[2])); // Assigns the information to the instance created
+
+			medicalStaff.add(vet);// Adds the instance to the ArrayList
 		}
 
 		/// Loop to generate Trainee Veterinarians
 		for (int i = 0; i < numTraineeVet; i++, j++) {
 			String medicalData = sdg.getRandomData();
 			String[] medicalParts = medicalData.split(" ");
-			// Create a class for salary
-			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
+			int staffID = sdg.generateMStaffID(j);
 			trainVet = medicStaff.new TraineeVet(medicalParts[0], medicalParts[1], staffID,
 					Integer.parseInt(medicalParts[2]));
 			medicalStaff.add(trainVet);
@@ -70,8 +80,7 @@ public class MedicalStaffList {
 		for (int i = 0; i < numNurse; i++, j++) {
 			String medicalData = sdg.getRandomData();
 			String[] medicalParts = medicalData.split(" ");
-			// Create a class for salary
-			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
+			int staffID = sdg.generateMStaffID(j);
 			nurse = medicStaff.new Nurse(medicalParts[0], medicalParts[1], staffID, Integer.parseInt(medicalParts[2]));
 			medicalStaff.add(nurse);
 		}
@@ -80,8 +89,7 @@ public class MedicalStaffList {
 		for (int i = 0; i < numVetAssistant; i++, j++) {
 			String medicalData = sdg.getRandomData();
 			String[] medicalParts = medicalData.split(" ");
-			// Create a class for salary
-			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
+			int staffID = sdg.generateMStaffID(j);
 			vetAssist = medicStaff.new VeterinarianAssistant(medicalParts[0], medicalParts[1], staffID,
 					Integer.parseInt(medicalParts[2]));
 			medicalStaff.add(vetAssist);
@@ -91,13 +99,13 @@ public class MedicalStaffList {
 		for (int i = 0; i < petHairStylist; i++, j++) {
 			String medicalData = sdg.getRandomData();
 			String[] medicalParts = medicalData.split(" ");
-			// Create a class for salary
-			int staffID = medicStaff.generateStaffID(j); // Method to generate the id
+			int staffID = sdg.generateMStaffID(j);
 			hairStyle = medicStaff.new PetHairStylist(medicalParts[0], medicalParts[1], staffID,
 					Integer.parseInt(medicalParts[2]));
 			medicalStaff.add(hairStyle);
 		}
 
+		// Returns the ArrayList already filled with medical staff
 		return medicalStaff;
 
 	}
