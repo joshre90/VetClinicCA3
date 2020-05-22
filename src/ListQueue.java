@@ -25,11 +25,18 @@ public class ListQueue {
 	}
 
 	public void printQueue(ArrayList<ClinicStaff> medicalStaff) {
-		System.out.println("Medical Staff is in charge of the following animals: \n");
+		// System.out.println("Medical Staff is in charge of the following animals:
+		// \n");
 		for (ClinicStaff ms : medicalStaff) {
-			System.out.println("\n--------------------\n");
+			System.out.println("\n-----------\n");
 			System.out.println(ms.getFirstName().toUpperCase() + " " + ms.getSurname().toUpperCase() + "\n");
-			System.out.println(ms.getAnimalQueue().toString());
+			if (ms.getAnimalQueue().getSize() == 0) {
+				System.out.println("There are no animals currently being attended by this staff member");
+			} else {
+
+				System.out.println(ms.getAnimalQueue().toString());
+			}
+
 		}
 	}
 
@@ -38,19 +45,24 @@ public class ListQueue {
 
 		for (ClinicStaff ms : medicalStaff) {
 			if ((ms.getFirstName().trim().toLowerCase().equals(name.toLowerCase())
-					&& ms.getSurname().trim().toLowerCase().equals(surname.toLowerCase()))) {
+					&& ms.getSurname().trim().toLowerCase().equals(surname.toLowerCase())) || ms.getStaffID() == ID) {
 				staffClass = getSimpleStaffName(ms);
-
-				System.out.println(
-						ms.getFirstName().toUpperCase() + " " + ms.getSurname().toUpperCase() + "- Will attend: \n");
-				System.out.println(ms.getAnimalQueue().toString());
-			} else if (ms.getStaffID() == ID) {
-				staffClass = getSimpleStaffName(ms);
-
-				System.out.println(
-						ms.getFirstName().toUpperCase() + " " + ms.getSurname().toUpperCase() + "  -   Is attening: ");
-				System.out.println(ms.getAnimalQueue().toString());
+				if (ms.getAnimalQueue().getSize() > 0) {
+					System.out.println("\n" + ms.getFirstName().toUpperCase() + " " + ms.getSurname().toUpperCase()
+							+ "- Will attend: \n");
+					System.out.println(ms.getAnimalQueue().toString());
+				} else {
+					System.out.println("\n" + ms.getFirstName().toUpperCase() + " " + ms.getSurname().toUpperCase()
+							+ "- Is currently not attending any animal");
+				}
 			}
+			//			else if () {
+			//				staffClass = getSimpleStaffName(ms);
+			//
+			//				System.out.println(
+			//						"\n" + ms.getFirstName().toUpperCase() + " " + ms.getSurname().toUpperCase() + "  -   Is attening: ");
+			//				System.out.println(ms.getAnimalQueue().toString());
+			//			}
 		}
 		if (staffClass == null) {
 			System.out.println("\nThe are no medical staff members with those credentials");
@@ -63,14 +75,21 @@ public class ListQueue {
 
 		for (ClinicStaff ms : medicalStaff) {
 			if ((ms.getFirstName().trim().toLowerCase().equals(name.toLowerCase())
-					&& ms.getSurname().trim().toLowerCase().equals(surname.toLowerCase()))) {
+					&& ms.getSurname().trim().toLowerCase().equals(surname.toLowerCase())) || (ms.getStaffID() == ID)) {
 				staffClass = getSimpleStaffName(ms);
-				searchValidator(ms);
+				if (ms.getAnimalQueue().getSize() > 0) {
+					searchValidator(ms);
+				} else {
+					System.out.println("\n*There are not more animals being attended by " + ms.getFirstName() + " "
+							+ ms.getSurname());
+					System.out.println("\n----------------\n");
+				}
 
-			} else if (ms.getStaffID() == ID) {
-				staffClass = getSimpleStaffName(ms);
-				searchValidator(ms);
 			}
+			//			else if (ms.getStaffID() == ID) {
+			//				staffClass = getSimpleStaffName(ms);
+			//				searchValidator(ms);
+			//			}
 		}
 		if (staffClass == null) {
 			System.out.println("\nThe are no medical staff members with those credentials");
@@ -84,16 +103,25 @@ public class ListQueue {
 		boolean flagSize;
 		String userChoice;
 		BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("------\n");
+		// System.out.println("------\n");
 
 		do {
-			System.out.println(staff.getFirstName() + " " + staff.getSurname() + " is now attending:");
+			System.out.println("\n\n" + staff.getFirstName() + " " + staff.getSurname() + " (Staff ID - "
+					+ staff.getStaffID() + ") is now attending:");
 			System.out.println(staff.getAnimalQueue().getFirst().toString() + "\n");
-			System.out.print("Would you like " + staff.getFirstName() + " " + staff.getSurname()+ " attend the next pet? Please type Yes(y) or No(n): ");
-			
+			System.out.print("Would you like " + staff.getFirstName() + " " + staff.getSurname()
+			+ " attend the next pet? Please type Yes(y) or No(n): ");
+
 			try {
 				userChoice = myReader.readLine();
 				System.out.println("\n----------------");
+
+				if (staff.getAnimalQueue().getSize() == 0) {
+					System.out.println("\n*There are not more animals being attended by " + staff.getFirstName() + " "
+							+ staff.getSurname());
+					System.out.println("\n----------------\n");
+					flag = true;
+				}
 
 				if (userChoice.equalsIgnoreCase("yes") || userChoice.equalsIgnoreCase("y")) {
 
@@ -118,9 +146,9 @@ public class ListQueue {
 		} while (!flag && staff.getAnimalQueue().getSize() > 0);
 
 		if (staff.getAnimalQueue().getSize() == 0) {
-			System.out.println("\nThere are not more animals being attended by " + staff.getFirstName() + " "
+			System.out.println("\n*There are not more animals being attended by " + staff.getFirstName() + " "
 					+ staff.getSurname());
-			System.out.println("\n------------------------------------\n\n");
+			System.out.println("\n----------------\n");
 		}
 
 	}

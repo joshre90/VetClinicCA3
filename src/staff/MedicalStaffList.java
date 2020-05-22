@@ -11,8 +11,6 @@ public class MedicalStaffList {
 	protected int salary;
 	private int j = 0;// Counter used for the staffID
 
-	private Queue animalQueue;
-
 	// Number of medical staff to be generated, it is calculated on a percentage
 	// level in case the total of medical staff varies
 	private int numMedicalStaff = 30; // Total number of medical Staff

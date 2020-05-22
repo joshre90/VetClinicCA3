@@ -8,11 +8,11 @@ public class ListAnimals {
 
 	public void listanimals(ArrayList<PetAnimals> animals) {
 		System.out.println("");
-
+		System.out.println("\n\n--  --  --  --  --  --  --  --\nTHE ANIMALS IN THE CLINIC ARE:\n");
 		for (PetAnimals an : animals) {
 
-			System.out.println("------\n" + "\nType of Animal: " + getSimpleAnimalName(an) + "\nName: " + an.getName()
-					+ "\nAge: " + an.getAge() + "\nCondition: " + an.getMedCondition() + "\n");
+			System.out.println("\nType of Animal: " + getSimpleAnimalName(an) + "\nName: " + an.getName() + "\nAge: "
+					+ an.getAge() + "\nCondition: " + an.getMedCondition() + "\n\n------");
 		}
 
 	}
@@ -51,7 +51,7 @@ public class ListAnimals {
 
 		}
 
-		System.out.println("\n----------------------------");
+		System.out.println("\n\n----------------------------");
 		System.out.println("THE " + type.toUpperCase() + " IN THE CLINC ARE:\n");
 
 		for (PetAnimals an : animals) {
@@ -91,12 +91,12 @@ public class ListAnimals {
 
 	public void listAnimalsByName(ArrayList<PetAnimals> animals, String name) {
 		String animalClass = null;
-		System.out.print("\nanimals in the clinict with the names that contain '" + name + "' are: \n");
+		System.out.print("\nAnimals with the name '" + name + "' are:\n");
 		for (PetAnimals an : animals) {
 			if (an.getName().toLowerCase().equals(name.toLowerCase())) {
 				animalClass = getSimpleAnimalName(an);
-				System.out.println("------\n" + "\nName: " + an.getName() + "\nCondition: " + an.getMedCondition()
-						+ "\nAnimal Type: " + animalClass + "\n");
+				System.out.println("\nName: " + an.getName() + "\nCondition: " + an.getMedCondition()
+				+ "\nAnimal Type: " + animalClass + "\n\n------\n");
 			}
 		}
 		if (animalClass == null) {

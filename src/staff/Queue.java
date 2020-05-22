@@ -52,8 +52,7 @@ public class Queue {
 		return toReturn;
 
 	}
-	
-	
+
 	public PetAnimals getFirst() {
 		return first;
 	}
@@ -61,9 +60,9 @@ public class Queue {
 	public void setFirst(PetAnimals first) {
 		this.first = first;
 	}
-	
+
 	public int getSize() {
 		return size;
 	}
-	
+
 }

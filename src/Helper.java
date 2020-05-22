@@ -79,13 +79,15 @@ public class Helper {
 					case 1:
 						ls.listnames(medicalStaff);
 						ls.listnames(adminStaff);
-						valid = false;
+						printStars();
+						// valid = false;
 						break;
 						// List All Staff By Selecting Category
 					case 2:
 
-						System.out.print("\n--------------------------------------------------------\n");
-						//System.out.println("Select a category which you want to list the staff from: ");
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						// System.out.println("Select a category which you want to list the staff from:
+						// ");
 						System.out.println("SELECT A CATEGORY TO LIST STAFF FROM: ");
 						System.out.println("\n    MEDICAL STAFF");
 						System.out.println(
@@ -96,20 +98,25 @@ public class Helper {
 						System.out.println("0 - Go back to main menu \n");
 
 						validatorCase2();
+						printStars();
 
-						valid = false;
+						// valid = false;
 						break;
 
 						// Search for a specific member of staff by name
 					case 3:
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						System.out.println("THE ADMIN STAFF CURRENT ACTIVITIES ARE:\n");
 						ls.listStaffByTask(adminStaff);
-						valid = false;
+						printStars();
+						// valid = false;
 						break;
 
 						// Search for Staff By Name
 					case 4:
 
-						System.out.print("\n--------------------------------------------------------\n");
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						System.out.println("SEARCHING FOR STAFF BY NAME");
 						System.out.print("Please type in the first name of the staff you are looking for: ");
 						name = myReader.readLine();
 
@@ -119,52 +126,63 @@ public class Helper {
 						ls.lookForStaff(medicalStaff, name, surname);
 						ls.lookForStaff(adminStaff, name, surname);
 
-						//validatorCase4();
+						// validatorCase4();
 						validatorYesNo(4);
 
-						valid = false;
+						printStars();
+
+						// valid = false;
 						break;
 
 						// List All Animals
 					case 5:
 						la.listanimals(animals);
-						valid = false;
+						printStars();
+						// valid = false;
 						break;
 
 						// List Animals By Type
 					case 6:
-						System.out.print("\n--------------------------------------------------------\n");
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						System.out.println("LISTING ANIMALS BY TYPE\n");
 						System.out.println("Select which type of animals you want to list: \n");
 						System.out.println(
 								"1 - Dogs \n2 - Cats \n3 - Rabbits \n4 - Mouses \n5 - Horses \n6 - Lizards \n7 - Snakes \n8 - Fishes \n9 - Parrots \n---");
 						System.out.println("0 - Go back to main menu \n\n");
 						validatorCase6();
 
-						valid = false;
+						printStars();
+						// valid = false;
 						break;
 
 						// Search for animal specific by name
 					case 7:
 
-						System.out.print("\n---------------------------------------------------------\n");
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						System.out.println("SEARCHING FOR ANIMALS BY NAME\n");
 						System.out.print("Please type in the name of the animal you are looking for: ");
 						name = myReader.readLine();
 
 						la.listAnimalsByName(animals, name);
-						
+
 						validatorYesNo(7);
-						//validatorCase7();
+						printStars();
+						// validatorCase7();
 
 						break;
 
 					case 8:
 						// medicalStaff = fq.FillQueue(medicalStaff, animals);
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						System.out.println("ANIMALS BEING ATTENDED BY STAFF MEMBERS ARE\n");
 						fq.printQueue(medicalStaff);
+						printStars();
 						break;
 
 					case 9:
 
-						System.out.print("\n--------------------------------------------------------\n");
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						System.out.println("ANIMALS BEING ATTENDED BY A PARTICULAR MEMBER OF STAFF\n");
 						System.out.print("Please type in the name of the staff you are looking for: ");
 						name = myReader.readLine();
 
@@ -173,14 +191,16 @@ public class Helper {
 						ID = validatorCase9();
 
 						fq.staffSearchQueue(medicalStaff, name, surname, ID);
-						
+
 						validatorYesNo(9);
 
+						printStars();
 						break;
 
 					case 10:
 
-						System.out.print("\n--------------------------------------------------------\n");
+						System.out.println("\n\n--  --  --  --  --  --  --  --  -- --");
+						System.out.println("FOR A PARTICULAR MEMEBER OF STAFF, PASS TO NEXT PET\n");
 						System.out.print("Please type in the name of the staff you are looking for: ");
 						name = myReader.readLine();
 
@@ -189,9 +209,10 @@ public class Helper {
 						ID = validatorCase9();
 
 						fq.staffQueue(medicalStaff, name, surname, ID);
-						
+
 						validatorYesNo(10);
-						
+						printStars();
+
 						break;
 						// (Redundant) In case there is an invalid input
 					default:
@@ -219,7 +240,7 @@ public class Helper {
 		flag = false;
 		do {
 			try {
-				System.out.print("Option: ");
+				System.out.println("\nPlease select a category by its number or 0 to go back: ");
 				choice = Integer.parseInt(myReader.readLine());
 				if (choice == 0) {
 					flag = true;
@@ -243,13 +264,12 @@ public class Helper {
 
 	}
 
-
 	public void validatorCase6() {
 		int animalChoice;
 		flag = false;
 		do {
 			try {
-				System.out.print("Option: ");
+				System.out.println("\nPlease select a category by its number or 0 to go back: ");
 				animalChoice = Integer.parseInt(myReader.readLine());
 				if (animalChoice == 0) {
 					flag = true;
@@ -267,13 +287,12 @@ public class Helper {
 		} while (!flag);
 	}
 
-	
 	public int validatorCase9() {
 		flag = false;
 		ID = 0;
 		do {
 			System.out.print("Please type in the ID of the staff (number between 1000 and "
-					+ (medicalStaff.size() + 1000) + " or 0 if not known): ");
+					+ (medicalStaff.size() + 1000) + " or 0 if not known):");
 
 			try {
 				ID = Integer.parseInt(myReader.readLine());
@@ -288,19 +307,19 @@ public class Helper {
 		return ID;
 
 	}
-	
+
 	public void validatorYesNo(int cases) {
 		do {
 			try {
-				System.out.print("\n--  --  --  --  --  --  --  --  --");
+				// System.out.print("\n-- -- -- -- -- -- -- -- --");
 				System.out.print("\nWould you like to do another search? Please type Yes(y) or No(n): ");
 				userChoice = myReader.readLine();
 
 				if (userChoice.equalsIgnoreCase("yes") || userChoice.equalsIgnoreCase("y")) {
-					
-					if(cases == 4) {
-						
-						System.out.print("\n--------------------------------------------------------\n");
+
+					if (cases == 4) {
+
+						// System.out.print("\n--------------------------------------------------------\n");
 						System.out.print("Please type in the first name of the staff you are looking for: ");
 						name = myReader.readLine();
 
@@ -309,20 +328,21 @@ public class Helper {
 
 						ls.lookForStaff(medicalStaff, name, surname);
 						ls.lookForStaff(adminStaff, name, surname);
-						
+
 					}
-					
-				else if(cases == 7) {
-					
-					System.out.print("\n--------------------------------------------------------\n");
-					System.out.print("Please type in the name of the animal you are looking for: ");
-					name = myReader.readLine();
-					
-					la.listAnimalsByName(animals, name);
-					
-				}
-				
-					else if(cases == 9) {
+
+					else if (cases == 7) {
+
+						System.out.print("\n--------------------------------------------------------\n");
+						System.out.print("Please type in the name of the animal you are looking for: ");
+						name = myReader.readLine();
+
+						la.listAnimalsByName(animals, name);
+
+					}
+
+					else if (cases == 9) {
+						System.out.print("\n--------------------------------------------------------\n");
 						System.out.print("Please type in the first name of the staff you are looking for: ");
 						name = myReader.readLine();
 
@@ -331,18 +351,18 @@ public class Helper {
 						ID = validatorCase9();
 
 						fq.staffSearchQueue(medicalStaff, name, surname, ID);
-				}else if(cases == 10) {
-					System.out.print("\n--------------------------------------------------------\n");
-					System.out.print("Please type in the first name of the staff you are looking for: ");
-					name = myReader.readLine();
+					} else if (cases == 10) {
+						System.out.print("\n--------------------------------------------------------\n");
+						System.out.print("Please type in the first name of the staff you are looking for: ");
+						name = myReader.readLine();
 
-					System.out.print("Please type in the lastname of the staff you are looking for: ");
-					surname = myReader.readLine();
-					ID = validatorCase9();
+						System.out.print("Please type in the lastname of the staff you are looking for: ");
+						surname = myReader.readLine();
+						ID = validatorCase9();
 
-					fq.staffQueue(medicalStaff, name, surname, ID);
-					
-				}
+						fq.staffQueue(medicalStaff, name, surname, ID);
+
+					}
 
 					flag = false;
 				} else if (userChoice.equalsIgnoreCase("no") || userChoice.equalsIgnoreCase("n")) {
@@ -356,6 +376,10 @@ public class Helper {
 				System.out.println("ERROR! Please type the correct answer");
 			}
 		} while (!flag);
+	}
+
+	public void printStars() {
+		System.out.println("\n\n*********************************************************************************");
 	}
 
 }

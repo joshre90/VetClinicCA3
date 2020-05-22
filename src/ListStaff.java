@@ -9,13 +9,12 @@ public class ListStaff {
 
 	// METHOD THAT LISTS ALL THE STAFF
 	public void listnames(ArrayList<ClinicStaff> staff) {
-		
-		
+
 		if (staff.get(0) instanceof Medical.Veterinarian) {
-			System.out.println("\n\n----------------------------------\nTHE MEDICAL STAFF IN THE CLINIC IS:\n");
-		}
-		else {
-			System.out.println("\n\n--------------------------------\nTHE ADMIN STAFF IN THE CLINIC IS:\n");	
+			System.out.println("\n\n--  --  --  --  --  --  --  --  --\nTHE MEDICAL STAFF IN THE CLINIC IS:\n");
+
+		} else {
+			System.out.println("\n\n--  --  --  --  --  --  --  --  --\nTHE ADMIN STAFF IN THE CLINIC IS:\n");
 		}
 
 		for (ClinicStaff ms : staff) {
@@ -23,8 +22,6 @@ public class ListStaff {
 			System.out.println("\nName: " + ms.getFirstName() + "\nSurname: " + ms.getSurname() + "\nRole: " + roleClass
 					+ "\nEmployeed ID: " + ms.getStaffID() + "\nAnnual Salary: " + ms.getSalary() + "\n\n------");
 		}
-
-		System.out.println("\n\n");
 
 	}
 
@@ -66,7 +63,7 @@ public class ListStaff {
 			break;
 		}
 
-		System.out.println("\n-------------------------");
+		System.out.println("\n----------------");
 		System.out.println(role.toUpperCase() + "S");
 		for (ClinicStaff ms : staff) {
 			roleClass = getSimpleStaffName(ms);
@@ -81,8 +78,8 @@ public class ListStaff {
 	public void listStaffByTask(ArrayList<ClinicStaff> staff) {
 		for (ClinicStaff ms : staff) {
 			roleClass = getSimpleStaffName(ms);
-			System.out.println("------\n" + "\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
-					+ roleClass + "\nTask: " + ms.getTask() + "\n");
+			System.out.println("Name: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: " + roleClass
+					+ "\nTask: " + ms.getTask() + "\n\n------\n");
 		}
 	}
 
@@ -92,14 +89,14 @@ public class ListStaff {
 
 		if (staff.get(0) instanceof Medical.Veterinarian) {
 			System.out.print("\n--  --  --  --  --  --  --  --  --");
-			System.out.println(
-					"\nMedical employees' names that contain Name: '" + staffName + "' or  Surname: '" + staffSurname + "' are: \n");
+			System.out.println("\nMedical employees' names that contain Name: '" + staffName + "' or  Surname: '"
+					+ staffSurname + "' are: \n");
 			for (ClinicStaff ms : staff) {
 				if (ms.getFirstName().trim().toLowerCase().equals(staffName.toLowerCase())
 						|| ms.getSurname().trim().toLowerCase().equals(staffSurname.toLowerCase())) {
 					staffClass = getSimpleStaffName(ms);
-					System.out.println("\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
-							+ staffClass + "\n------");
+					System.out.println("\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: " + staffClass
+							+ "\n\n------");
 				}
 			}
 			if (staffClass == null) {
@@ -113,8 +110,8 @@ public class ListStaff {
 				if (ms.getFirstName().toLowerCase().equals(staffName.toLowerCase())
 						|| ms.getSurname().toLowerCase().equals(staffSurname.toLowerCase())) {
 					staffClass = getSimpleStaffName(ms);
-					System.out.println("\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: "
-							+ staffClass + "\n------");
+					System.out.println("\nName: " + ms.getFirstName() + " " + ms.getSurname() + "\nRole: " + staffClass
+							+ "\n\n------");
 				}
 			}
 			if (staffClass == null) {

@@ -38,13 +38,13 @@ public class AnimalList {
 	Animal.Sneak snek;
 	Animal.Parrot parrot;
 
-	//		//Trying to generate random animals
-	//		public ArrayList<PetAnimals> generateAnimals2() {
-	//			
-	//			for (int i = 0; i<= numOfAnimals; i++) {		
-	//			}
-	//			return animals; 
-	//		}
+	// //Trying to generate random animals
+	// public ArrayList<PetAnimals> generateAnimals2() {
+	//
+	// for (int i = 0; i<= numOfAnimals; i++) {
+	// }
+	// return animals;
+	// }
 
 	// Method that generates the animals
 	public ArrayList<PetAnimals> generateAnimals() {
@@ -120,9 +120,9 @@ public class AnimalList {
 			animals.add(parrot);
 		}
 
-		//	  for (PetAnimals pa : animals) {
-		//		  System.out.println(pa);
-		//	  }
+		// for (PetAnimals pa : animals) {
+		// System.out.println(pa);
+		// }
 
 		return animals;
 

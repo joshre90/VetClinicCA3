@@ -9,15 +9,14 @@ public class AnimalDataGenerator {
 			"Simba", "Biscuit", "Fiona", "Goofy", "Lexie", "Milo", "Rocko", "Max", "Charlie", "Spark", "Roxie", "Duke",
 			"Buster", "Splinter", "Lola", "Buddy", "Rocky", "Jake", "Daisy", "Cece", "Lucky", "Bella", "Solovino",
 			"Molly", "Maggie", "Penny", "Coco", "Sadie", "Zoe", "Sasha", "Angel", "Sheba", "Princess", "Smokey", "Fred",
-			"Chloe" };
-	
+	"Chloe" };
+
 	private String[] conditions = { "Coronavirus", "Arthritis", "Cancer", "Dental_Disease", "Diabetes", "Distemper",
 			"Ear_Mites", "Epilepsy", "Bloat", "Worm", "Rabies", "Parvovirus", "Acne", "Bluetongue", "Diahorrea",
-			"Ticks", "Cholera", "Lumpy_Jaw", "Hendra", "Pestivirus", "Salmonellosis",
-			"Encephalopathy", "Tuberculosis", "Strangles", "Nosema", "Tick_Fever", "Warts",
-			"Tapeworms", "Tetanus", "Anthrax", "Mastitis", "Ringworm", "Calf_Scour" + "Lumpy_Skin", "Theileriosis",
-			"Dermatitis", "Pox" };
-	
+			"Ticks", "Cholera", "Lumpy_Jaw", "Hendra", "Pestivirus", "Salmonellosis", "Encephalopathy", "Tuberculosis",
+			"Strangles", "Nosema", "Tick_Fever", "Warts", "Tapeworms", "Tetanus", "Anthrax", "Mastitis", "Ringworm",
+			"Calf_Scour" + "Lumpy_Skin", "Theileriosis", "Dermatitis", "Pox" };
+
 	private int ages = 16;
 
 	public AnimalDataGenerator() {

@@ -79,7 +79,7 @@ public class Admin extends ClinicStaff {
 
 	}
 
-	////Method that generates the number ID
+	//// Method that generates the number ID
 	public int generateStaffID(int i) {
 		int staffID = 2000; // ID for medical staff starts in 2000
 		staffID += i;
